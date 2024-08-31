@@ -5,7 +5,7 @@ int min(int a, int b) {
 	return b;
 }
 
-int valid (int i, int j, int m, int n) {
+int isValid (int i, int j, int m, int n) {
 	// Exit Condition
 	if (i < 0 || j < 0 || i > m || j > n) return 0;
 	return 1;
@@ -17,8 +17,8 @@ int  ReachEnd(int matrix[3][4], int i, int j, int m, int n) {
 		return matrix[i][j];
 	}
 	
-	int choice1Valid = valid(i + 1, j, m, n);
-	int choice2Valid = valid(i, j + 1, m, n);
+	int choice1Valid = isValid(i + 1, j, m, n);
+	int choice2Valid = isValid(i, j + 1, m, n);
 
 	// We can take both PATHS
 	if (choice1Valid && choice2Valid) {
@@ -33,7 +33,7 @@ int  ReachEnd(int matrix[3][4], int i, int j, int m, int n) {
 		return matrix[i][j] + calChoice1;
 	}
 
-	//Choice 2 is left
+	// We can only take Choice 2
 	int calChoice2 = ReachEnd(matrix, i, j + 1, m, n);
 	return matrix[i][j] + calChoice2;
 }
