@@ -1,0 +1,5 @@
+Welcome!
+
+To the example file!
+
+Learning File Management in C!
